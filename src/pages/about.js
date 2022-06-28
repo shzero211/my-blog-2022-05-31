@@ -4,11 +4,9 @@ import Layout from "../components/Layout";
 const AboutSpace = () => {
   return (
       
-      <Layout >
-        <title>어바웃 페이지입니다</title>
-        <h1>어바웃</h1>
+      <Layout pageTitle="About Me" >
       </Layout>
-  );
+  ); 
 };
 
 export default AboutSpace

@@ -4,9 +4,7 @@ import Layout from "../components/Layout";
 const IndexPage = () => {
   return (
      
-      <Layout>
-         <title>인덱스</title>
-        <h1>index</h1>
+      <Layout pageTitle="Home Page">
       </Layout>
   );
 };
