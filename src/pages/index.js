@@ -1,13 +1,13 @@
 import * as React from "react"
-import Head from "../components/head";
+import Layout from "../components/Layout";
 // markup
 const IndexPage = () => {
   return (
-    <main>
-      <title>인덱스</title>
-      <Head/>
-      <h1>인덱스</h1>
-    </main>
+     
+      <Layout>
+         <title>인덱스</title>
+        <h1>index</h1>
+      </Layout>
   );
 };
 
