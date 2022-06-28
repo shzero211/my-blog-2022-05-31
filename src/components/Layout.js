@@ -23,8 +23,11 @@ function Layout({children,pageTitle}){
                 <li className={navLinkItem}>
                     <Link className={navLinkText} to="/" >HOME</Link>
                 </li>
-                <li>
+                <li className={navLinkItem}>
                 <Link className={navLinkText} to="/about" >ABOUT</Link>
+                </li>
+                <li className={navLinkItem}>
+                <Link className={navLinkText} to="/blog" >BLOG</Link>
                 </li>
             </ul>
           </nav>
