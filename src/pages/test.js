@@ -1,14 +1,14 @@
 import * as React from "react"
 import Head from "../components/head";
 // markup
-const IndexPage = () => {
+const TestPage = () => {
   return (
     <main>
-      <title>인덱스</title>
+      <title>테스트 페이지</title>
       <Head/>
-      <h1>인덱스</h1>
+      <h1>테스트페이지입니다.</h1>
     </main>
   );
 };
 
-export default IndexPage
+export default TestPage
