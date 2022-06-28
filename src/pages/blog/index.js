@@ -1,40 +1,35 @@
-import * as React from "react"
-import Layout from "../../components/Layout";
-import { useStaticQuery,graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-// markup
-const BlogPage = () => {
-  const data=useStaticQuery(graphql`
+import { graphql, Link } from "gatsby";
+import React from "react";
+import Layout from "../../components/layout";
+
+const BlogPage = ({ data }) => {
+  return (
+    <Layout pageTitle="My Blog Posts">
+      {data.allMdx.nodes.map((node) => (
+        <article key={node.id}>
+          <h2>
+            <Link to={`/blog/${node.slug}`}>{node.frontmatter.title}</Link>
+          </h2>
+          <p>Posted: {node.frontmatter.date}</p>
+        </article>
+      ))}
+    </Layout>
+  );
+};
+
+export const query = graphql`
   query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
-          
         }
         id
-        body
+        slug
       }
     }
-  }`);
-  return (
-      
-      <Layout pageTitle="My Blog Posts">
-        <p>My cool posts will go in here</p>
-        <ul>
-          {data.allMdx.nodes.map((node)=>(
-            <article key={node.id}>
-            <h2>{node.frontmatter.title}</h2>
-            <h2>{node.frontmatter.date}</h2>
-           <MDXRenderer>
-            {node.body}
-           </MDXRenderer>
-           </article>
-          ))}
-        </ul>
-      </Layout>
-  ); 
-};
+  }
+`;
 
-export default BlogPage
+export default BlogPage;

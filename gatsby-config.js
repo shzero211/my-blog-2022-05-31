@@ -1,7 +1,7 @@
 // gatsby-config.js
 module.exports = {
   siteMetadata: {
-    title: "My First Gatsby Site",
+    title: "SangHun GIT BLOG",
   },
   plugins: [
     "gatsby-plugin-image",
