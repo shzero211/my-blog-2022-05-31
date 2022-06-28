@@ -1,12 +1,20 @@
-import { Link } from "gatsby";
+import { Link,useStaticQuery,graphql} from "gatsby";
 import React from "react";
 import {container,heading,navLinks,navLinkItem,navLinkText} from "./layout.module.css"
 
 function Layout({children,pageTitle}){
+  const data={
+      "site": {
+        "siteMetadata": {
+          "title": "My First Gatsby Site",
+        },
+      },
+  };
+ 
     return (
         <main>
         <div className={container}>
-            <title>{pageTitle}</title>
+            <title>{pageTitle}|{data.site.siteMetadata.title}</title>
           <nav>
             <ul className={navLinks}>
                 <li className={navLinkItem}>
@@ -19,6 +27,7 @@ function Layout({children,pageTitle}){
           </nav>
           <h1 className={heading}>{pageTitle}</h1>
           {children}
+          
           <div>Copyright All Rights</div>
           </div>
         </main>
