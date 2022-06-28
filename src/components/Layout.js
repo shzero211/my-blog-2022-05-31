@@ -3,13 +3,15 @@ import React from "react";
 import {container,heading,navLinks,navLinkItem,navLinkText} from "./layout.module.css"
 
 function Layout({children,pageTitle}){
-  const data={
-      "site": {
-        "siteMetadata": {
-          "title": "My First Gatsby Site",
-        },
-      },
-  };
+  const data=useStaticQuery(graphql`
+    query{
+      site{
+        siteMetadata{
+          title
+        }
+      }
+    }
+    `);
  
     return (
         <main>
